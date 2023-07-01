@@ -1,0 +1,13 @@
+---
+ - name: install multiple softwares
+   hosts: all
+   tasks:
+    - name: install software multiple
+      apt:
+       name: "{{ item }}"
+       state: latest
+      when: (ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_major_version'] == "22")
+      loop:
+       - git
+       - docker
+       - python3
