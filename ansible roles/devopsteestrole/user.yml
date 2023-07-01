@@ -1,0 +1,6 @@
+---
+
+ - name: create user
+   user:
+     name: devopstest
+     state: present
